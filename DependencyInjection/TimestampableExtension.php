@@ -14,7 +14,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
  * @package Incompass\TimestampableBundle\DependencyInjection
  * @author  Joe Mizzi <joe@casechek.com>
  */
-class TimestampableExtension extends Extension implements PrependExtensionInterface
+class TimestampableExtension extends Extension
 {
     /**
      * @param array $configs
@@ -27,41 +27,5 @@ class TimestampableExtension extends Extension implements PrependExtensionInterf
             new FileLocator(__DIR__ . '/../Resources/config')
         );
         $loader->load('services.yml');
-    }
-
-    /**
-     * @param ContainerBuilder $container
-     */
-    public function prepend(ContainerBuilder $container)
-    {
-        $env = $container->getParameter('kernel.environment');
-        if ($env == 'test') {
-            $container->prependExtensionConfig('doctrine', [
-                    'dbal' => [
-                        'connections' => [
-                            'timestampable_test' => [
-                                'driver' => 'pdo_sqlite',
-                                'memory' => true
-                            ]
-                        ]
-                    ],
-                    'orm' => [
-                        'entity_managers' => [
-                            'timestampable_test' => [
-                                'connection' => 'timestampable_test',
-                                'mappings' => [
-                                    'TimestampableBundle' => [
-                                        'type' => 'annotation',
-                                        'dir' => 'Tests/Stub',
-                                        'is_bundle' => true,
-                                        'prefix' => 'Incompass\TimestampableBundle'
-                                    ]
-                                ]
-                            ]
-                        ]
-                    ]
-            ]);
-        }
-
     }
 }

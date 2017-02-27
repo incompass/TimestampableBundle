@@ -5,3 +5,20 @@ framework:
         storage_id: session.storage.mock_file
     profiler:
         collect: false
+
+doctrine:
+    dbal:
+        connections:
+            timestampable_test:
+                driver: pdo_sqlite
+                memory: true
+    orm:
+        entity_managers:
+            timestampable_test:
+                connection: timestampable_test
+                mappings:
+                    TimestampableBundle:
+                        type: annotation
+                        dir: Tests/Stub
+                        is_bundle: true
+                        prefix: Incompass\TimestampableBundle
