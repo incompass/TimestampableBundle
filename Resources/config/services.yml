@@ -1,0 +1,6 @@
+services:
+
+    timestampable.listener:
+        class: Incompass\TimestampableBundle\EventListener\TimestampableSubscriber
+        tags:
+            - { name: doctrine.event_subscriber }
