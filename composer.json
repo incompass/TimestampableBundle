@@ -12,24 +12,18 @@
     }
   ],
   "require": {
-    "php": ">=5.5.0",
-    "symfony/framework-bundle": "~2.3|~3.0"
+    "php": ">=5.5.0"
   },
   "require-dev": {
+    "symfony/framework-bundle": "~2.7|~3.0",
     "phpunit/phpunit": "^4.2|^5.0",
     "symfony/expression-language": "~2.6|~3.0",
-    "symfony/yaml": "*",
-    "symfony/browser-kit": "*",
-    "symfony/class-loader": "*",
-    "symfony/finder": "*",
-    "symfony/css-selector": "*",
-    "symfony/process": "*",
+    "symfony/yaml": "~2.7",
+    "symfony/class-loader": "~2.7",
+    "symfony/finder": "~2.7",
     "doctrine/doctrine-bundle": "*",
-    "symfony/twig-bundle": "*",
     "doctrine/orm": "*",
-    "symfony/form": "*",
-    "symfony/validator": "*",
-    "symfony/stopwatch": "*"
+    "symfony/console": "~2.7"
   },
   "autoload": {
     "psr-4": { "Incompass\\TimestampableBundle\\": "" }
