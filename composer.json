@@ -18,12 +18,12 @@
     "symfony/framework-bundle": "~2.7|~3.0",
     "phpunit/phpunit": "^4.2|^5.0",
     "symfony/expression-language": "~2.6|~3.0",
-    "symfony/yaml": "~2.7",
-    "symfony/class-loader": "~2.7",
-    "symfony/finder": "~2.7",
+    "symfony/yaml": "~2.7|~3.0",
+    "symfony/class-loader": "~2.7|~3.0",
+    "symfony/finder": "~2.7|~3.0",
     "doctrine/doctrine-bundle": "*",
     "doctrine/orm": "*",
-    "symfony/console": "~2.7"
+    "symfony/console": "~2.7|~3.0"
   },
   "autoload": {
     "psr-4": { "Incompass\\TimestampableBundle\\": "" }
