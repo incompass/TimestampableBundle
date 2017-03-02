@@ -30,15 +30,15 @@ class TimestampableListenerTest extends KernelTestCase
      */
     public function it_adds_created_and_updated_timestamps_to_inserted_entity()
     {
-        $timestampableEntityStub = new TimestampableEntity();
+        $stub = new TimestampableEntity();
         $manager = self::$kernel->getContainer()->get('doctrine')->getManager('timestampable_test');
-        $manager->persist($timestampableEntityStub);
+        $manager->persist($stub);
         $manager->flush();
         $results = $manager->getRepository(TimestampableEntity::class)->findAll();
-        /** @var TimestampableEntity $timestampableEntityStub */
-        $timestampableEntityStub = $results[0];
-        self::assertNotNull($timestampableEntityStub->getCreatedAt());
-        self::assertNotNull($timestampableEntityStub->getUpdatedAt());
+        /** @var TimestampableEntity $stub */
+        $stub = $results[0];
+        self::assertNotNull($stub->getCreatedAt());
+        self::assertNotNull($stub->getUpdatedAt());
     }
 
     /**
@@ -46,18 +46,18 @@ class TimestampableListenerTest extends KernelTestCase
      */
     public function it_adds_an_updated_timestamp_to_updated_entities()
     {
-        $timestampableEntityStub = new TimestampableEntity();
+        $stub = new TimestampableEntity();
         $manager = self::$kernel->getContainer()->get('doctrine')->getManager('timestampable_test');
-        $manager->persist($timestampableEntityStub);
+        $manager->persist($stub);
         $manager->flush();
         $results = $manager->getRepository(TimestampableEntity::class)->findAll();
-        /** @var TimestampableEntity $timestampableEntityStub */
-        $timestampableEntityStub = $results[0];
+        /** @var TimestampableEntity $stub */
+        $stub = $results[0];
         sleep(1);
-        $timestampableEntityStub->setField('updated');
+        $stub->setField('updated');
         $manager = self::$kernel->getContainer()->get('doctrine')->getManager('timestampable_test');
-        $manager->persist($timestampableEntityStub);
+        $manager->persist($stub);
         $manager->flush();
-        self::assertNotEquals($timestampableEntityStub->getCreatedAt(), $timestampableEntityStub->getUpdatedAt());
+        self::assertNotEquals($stub->getCreatedAt(), $stub->getUpdatedAt());
     }
 }
