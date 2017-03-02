@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/incompass/TimestampableBundle.svg?branch=master)](https://travis-ci.org/incompass/TimestampableBundle)
+
 TimestampableBundle
 ===================
 
