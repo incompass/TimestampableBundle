@@ -31,3 +31,8 @@ php bin/console doctrine:schema:update --force
 ```
 
 All entities will now be saved with created_at and updated_at fields populated.
+
+Contributors
+------------
+
+Joe Mizzi (casechek/incompass)
