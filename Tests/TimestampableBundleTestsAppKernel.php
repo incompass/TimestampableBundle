@@ -9,7 +9,7 @@ use Symfony\Component\Config\Loader\LoaderInterface;
  * @package Incompass\Tests
  * @author  Joe Mizzi <joe@casechek.com>
  */
-class AppKernel extends Kernel
+class TimestampableBundleTestsAppKernel extends Kernel
 {
     /**
      * @return array
