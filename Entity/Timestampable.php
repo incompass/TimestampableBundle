@@ -16,13 +16,13 @@ trait Timestampable
      * @var DateTime
      * @ORM\Column(name="created_at", type="datetime")
      */
-    protected $createdAt;
+    private $createdAt;
 
     /**
      * @var DateTime
      * @ORM\Column(name="updated_at", type="datetime")
      */
-    protected $updatedAt;
+    private $updatedAt;
 
     /**
      * Sets createdAt.
