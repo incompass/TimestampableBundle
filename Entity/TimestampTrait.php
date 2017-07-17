@@ -10,7 +10,7 @@ use DateTime;
  * @package Incompass\TimestampableBundle\Entity
  * @author  Joe Mizzi <joe@casehek.com>
  */
-trait Timestampable
+trait TimestampTrait
 {
     /**
      * @var DateTime
