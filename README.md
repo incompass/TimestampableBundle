@@ -1,11 +1,11 @@
-[![Build Status](https://travis-ci.org/incompass/TimestampableBundle.svg?branch=master)](https://travis-ci.org/incompass/TimestampableBundle)
+[![Build Status](https://travis-ci.org/incompass/TimestampTraitBundle.svg?branch=master)](https://travis-ci.org/incompass/TimestampTraitBundle)
 [![Total Downloads](https://poser.pugx.org/incompass/timestampable-bundle/downloads.svg)](https://packagist.org/packages/incompass/timestampable-bundle)
 [![Latest Stable Version](https://poser.pugx.org/incompass/timestampable-bundle/v/stable.svg)](https://packagist.org/packages/incompass/timestampable-bundle)
 
-TimestampableBundle
+TimestampTraitBundle
 ===================
 
-This bundle allows you to simply add ```use Timestampable``` 
+This bundle allows you to simply add ```use TimestampTrait``` 
 to a doctrine entity class to have it automatically add 
 created_at and updated_at fields and to have them updated on
 insert and update.
@@ -21,10 +21,10 @@ composer require incompass-timestampablebundle
 Usage
 -----
 
-Add the Timestampable trait to your doctrine entities.
+Add the TimestampTrait trait to your doctrine entities.
 
 ```
-use Timestampable
+use TimestampTrait
 ```
 
 Update your database schema
