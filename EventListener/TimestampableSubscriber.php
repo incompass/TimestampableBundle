@@ -6,6 +6,7 @@ use Doctrine\Common\EventSubscriber;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Event\OnFlushEventArgs;
 use Doctrine\ORM\Event\PreFlushEventArgs;
+use Incompass\TimestampableBundle\Entity\TimestampInterface;
 use Incompass\TimestampableBundle\Entity\TimestampTrait;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerAwareTrait;
@@ -37,7 +38,7 @@ class TimestampableSubscriber implements EventSubscriber
         $uow = $args->getEntityManager()->getUnitOfWork();
 
         foreach ($uow->getScheduledEntityInsertions() as $insert) {
-            if (in_array(TimestampTrait::class, class_uses($insert))) {
+            if ($insert instanceof TimestampInterface) {
                 /** @var TimestampTrait $update */
                 $now = new \DateTime(null, new \DateTimeZone('UTC'));
                 $insert->setCreatedAt($now);
@@ -50,7 +51,7 @@ class TimestampableSubscriber implements EventSubscriber
         }
 
         foreach ($uow->getScheduledEntityUpdates() as $update) {
-            if (in_array(TimestampTrait::class, class_uses($update))) {
+            if ($update instanceof TimestampInterface) {
                 /** @var TimestampTrait $update */
                 $now = new \DateTime(null, new \DateTimeZone('UTC'));
                 $update->setUpdatedAt($now);

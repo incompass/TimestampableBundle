@@ -3,6 +3,7 @@
 namespace Incompass\TimestampableBundle\Tests\Stub;
 
 use Doctrine\ORM\Mapping as ORM;
+use Incompass\TimestampableBundle\Entity\TimestampInterface;
 use Incompass\TimestampableBundle\Entity\TimestampTrait;
 
 /**
@@ -14,7 +15,7 @@ use Incompass\TimestampableBundle\Entity\TimestampTrait;
  * @ORM\Table(name="timestampable")
  * @ORM\Entity()
  */
-class TimestampableEntity
+class TimestampableEntity implements TimestampInterface
 {
     use TimestampTrait;
 
