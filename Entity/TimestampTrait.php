@@ -3,6 +3,7 @@
 namespace Incompass\TimestampableBundle\Entity;
 
 use DateTime;
+use Doctrine\ORM\Mapping\Column;
 
 /**
  * Class Timestampable
@@ -14,13 +15,13 @@ trait TimestampTrait
 {
     /**
      * @var DateTime
-     * @ORM\Column(name="created_at", type="datetime")
+     * @Column(name="created_at", type="datetime")
      */
     private $createdAt;
 
     /**
      * @var DateTime
-     * @ORM\Column(name="updated_at", type="datetime")
+     * @Column(name="updated_at", type="datetime")
      */
     private $updatedAt;
 
