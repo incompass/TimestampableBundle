@@ -16,13 +16,13 @@ trait TimestampTrait
 {
     /**
      * @var DateTime
-     * @Column(name="created_at", type="datetime", nullable=true, options={"default": 0})
+     * @Column(name="created_at", type="datetime", columnDefinition="DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP")
      */
     private $createdAt;
 
     /**
      * @var DateTime
-     * @Column(name="updated_at", type="datetime", nullable=true, options={"default": 0})
+     * @Column(name="updated_at", type="datetime", columnDefinition="DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP")
      */
     private $updatedAt;
 
