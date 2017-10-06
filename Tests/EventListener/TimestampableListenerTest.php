@@ -22,6 +22,7 @@ class TimestampableListenerTest extends KernelTestCase
         self::bootKernel();
         $application = new Application(self::$kernel);
         $application->setAutoExit(false);
+        $application->run(new StringInput('doctrine:schema:create --no-interaction --env=test --em=timestampable_test'), new NullOutput());
         $application->run(new StringInput('doctrine:schema:update --force --env=test --em=timestampable_test'), new NullOutput());
     }
 
