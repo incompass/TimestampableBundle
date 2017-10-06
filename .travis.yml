@@ -5,6 +5,12 @@ php:
 - 7.0
 - 7.1
 - hhvm
+before-install:
+  - "sudo apt-get remove mysql-common mysql-server-5.6 mysql-server-core-5.6 mysql-client-5.6 mysql-client-core-5.6"
+  - "sudo apt-get autoremove"
+  - "wget -O wget -O mysql-5.6.5-m8-ubuntu10.04-i686.deb https://downloads.mysql.com/archives/get/file/mysql-5.6.5-m8-ubuntu10.04-i686.deb"
+  - "sudo dpkg -i mysql-5.6.5-m8-ubuntu10.04-i686.deb"
+  - "sudo /etc/init.d/mysql.server start"
 services:
   - mysql
 sudo: false
