@@ -10,18 +10,19 @@ use Doctrine\ORM\Mapping\Column;
  *
  * @package Incompass\TimestampableBundle\Entity
  * @author  Joe Mizzi <joe@casehek.com>
+ * @author Mike Bates <mike@casechek.com>
  */
 trait TimestampTrait
 {
     /**
      * @var DateTime
-     * @Column(name="created_at", type="datetime")
+     * @Column(name="created_at", type="datetime", options={"default": 0})
      */
     private $createdAt;
 
     /**
      * @var DateTime
-     * @Column(name="updated_at", type="datetime")
+     * @Column(name="updated_at", type="datetime", options={"default": 0})
      */
     private $updatedAt;
 

@@ -20,7 +20,6 @@ composer require incompass-timestampablebundle
 
 Usage
 -----
-
 Add the TimestampTrait trait to your doctrine entities.
 
 ```
@@ -34,7 +33,14 @@ php bin/console doctrine:schema:update --force
 
 All entities will now be saved with created_at and updated_at fields populated.
 
+Requirements
+------------
+This bundle uses DEFAULT CURRENT_TIMESTAMP, so your DBMS should support this.
+ 
+For MySql you will need 5.6.5, the bundle is tested against MySQL 5.6.33 
+
 Contributors
 ------------
-
 Joe Mizzi (casechek/incompass)
+
+Mike Bates (casechek/incompass)
