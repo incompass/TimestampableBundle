@@ -37,18 +37,18 @@ class TimestampableSubscriber implements EventSubscriber
     {
         $uow = $args->getEntityManager()->getUnitOfWork();
 
-        foreach ($uow->getScheduledEntityInsertions() as $insert) {
-            if ($insert instanceof TimestampInterface) {
-                /** @var TimestampTrait $update */
-                $now = new \DateTime(null, new \DateTimeZone('UTC'));
-                $insert->setCreatedAt($now);
-                $insert->setUpdatedAt($now);
-                $uow->recomputeSingleEntityChangeSet(
-                    $args->getEntityManager()->getClassMetadata(get_class($insert)),
-                    $insert
-                );
-            }
-        }
+//        foreach ($uow->getScheduledEntityInsertions() as $insert) {
+//            if ($insert instanceof TimestampInterface) {
+//                /** @var TimestampTrait $update */
+//                $now = new \DateTime(null, new \DateTimeZone('UTC'));
+//                $insert->setCreatedAt($now);
+//                $insert->setUpdatedAt($now);
+//                $uow->recomputeSingleEntityChangeSet(
+//                    $args->getEntityManager()->getClassMetadata(get_class($insert)),
+//                    $insert
+//                );
+//            }
+//        }
 
         foreach ($uow->getScheduledEntityUpdates() as $update) {
             if ($update instanceof TimestampInterface) {
