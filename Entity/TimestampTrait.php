@@ -10,6 +10,7 @@ use Doctrine\ORM\Mapping\Column;
  *
  * @package Incompass\TimestampableBundle\Entity
  * @author  Joe Mizzi <joe@casehek.com>
+ * @author Mike Bates <mike@casechek.com>
  */
 trait TimestampTrait
 {
@@ -21,7 +22,7 @@ trait TimestampTrait
 
     /**
      * @var DateTime
-     * @Column(name="updated_at", type="datetime", options={"default": 0})
+     * @Column(name="updated_at", type="datetime", options={"default": 0}, columnDefinition="DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP")
      */
     private $updatedAt;
 
