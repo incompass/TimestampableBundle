@@ -2,7 +2,7 @@
 [![Total Downloads](https://poser.pugx.org/incompass/timestampable-bundle/downloads.svg)](https://packagist.org/packages/incompass/timestampable-bundle)
 [![Latest Stable Version](https://poser.pugx.org/incompass/timestampable-bundle/v/stable.svg)](https://packagist.org/packages/incompass/timestampable-bundle)
 
-TimestampTraitBundle
+TimestampableBundle
 ===================
 
 This bundle allows you to simply add ```use TimestampTrait``` 
