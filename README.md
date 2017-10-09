@@ -5,21 +5,27 @@
 TimestampableBundle
 ===================
 
-This bundle allows you to simply add ```use TimestampTrait``` 
-to a doctrine entity class to have it automatically add 
-created_at and updated_at fields and to have them updated on
-insert and update.
+This bundle allows you to simply add ```use TimestampInterface``` 
+and ```use TimestampTrait``` to a doctrine entity class to have 
+it automatically add created_at and updated_at fields and to 
+have them updated on insert and update.
 
 Installation
 ------------
 
 ### Composer
 ```
-composer require incompass-timestampablebundle
+composer require incompass/timestampablebundle
 ```
 
 Usage
 -----
+
+Add the TimestampInterface to your doctrine entities.
+
+```
+class {Entity} implements TimestampInterface
+```
 
 Add the TimestampTrait trait to your doctrine entities.
 
