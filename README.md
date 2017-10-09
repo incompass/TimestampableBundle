@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/incompass/TimestampTraitBundle.svg?branch=master)](https://travis-ci.org/incompass/TimestampTraitBundle)
+[![Build Status](https://travis-ci.org/incompass/TimestampableBundle.svg?branch=master)](https://travis-ci.org/incompass/TimestampableBundle)
 [![Total Downloads](https://poser.pugx.org/incompass/timestampable-bundle/downloads.svg)](https://packagist.org/packages/incompass/timestampable-bundle)
 [![Latest Stable Version](https://poser.pugx.org/incompass/timestampable-bundle/v/stable.svg)](https://packagist.org/packages/incompass/timestampable-bundle)
 
