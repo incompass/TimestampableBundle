@@ -3,7 +3,7 @@
 namespace Incompass\TimestampableBundle\Tests;
 
 use Incompass\TimestampableBundle\DependencyInjection\TimestampableExtension;
-use Incompass\TimestampableBundle\EventListener\TimestampableSubscriber;
+use Incompass\TimestampableBundle\EventListener\TimestampableListener;
 use Symfony\Bundle\FrameworkBundle\Tests\TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
@@ -25,6 +25,6 @@ class TimestampableExtensionTest extends TestCase
         $container->registerExtension($extension);
         $container->loadFromExtension('timestampable');
         $container->compile();
-        self::assertInstanceOf(TimestampableSubscriber::class, $container->get('timestampable.listener'));
+        self::assertInstanceOf(TimestampableListener::class, $container->get('timestampable.listener'));
     }
 }
