@@ -2,7 +2,7 @@
 
 namespace Incompass\TimestampableBundle\DependencyInjection;
 
-use Incompass\TimestampableBundle\EventListener\TimestampableSubscriber;
+use Incompass\TimestampableBundle\EventListener\TimestampableListener;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
@@ -21,8 +21,8 @@ class TimestampableExtension extends Extension
      */
     public function load(array $configs, ContainerBuilder $container)
     {
-        $definition = new Definition(TimestampableSubscriber::class);
-        $definition->addTag('doctrine.event_subscriber');
-        $container->setDefinition('timestampable.subscriber', $definition);
+        $definition = new Definition(TimestampableListener::class);
+        $definition->addTag('doctrine.event_listener', ['event' => 'onFlush', 'priority' => -9999]);
+        $container->setDefinition('timestampable.listener', $definition);
     }
 }
