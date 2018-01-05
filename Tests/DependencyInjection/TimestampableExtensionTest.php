@@ -25,6 +25,6 @@ class TimestampableExtensionTest extends TestCase
         $container->registerExtension($extension);
         $container->loadFromExtension('timestampable');
         $container->compile();
-        self::assertInstanceOf(TimestampableSubscriber::class, $container->get('timestampable.subscriber'));
+        self::assertInstanceOf(TimestampableSubscriber::class, $container->get('timestampable.listener'));
     }
 }
