@@ -2,15 +2,9 @@
 
 namespace Incompass\TimestampableBundle\EventListener;
 
-use Doctrine\Common\EventSubscriber;
-use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Event\OnFlushEventArgs;
-use Doctrine\ORM\Event\PreFlushEventArgs;
 use Incompass\TimestampableBundle\Entity\TimestampInterface;
 use Incompass\TimestampableBundle\Entity\TimestampTrait;
-use Symfony\Component\DependencyInjection\ContainerAwareInterface;
-use Symfony\Component\DependencyInjection\ContainerAwareTrait;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Class TimestampableListener
@@ -18,18 +12,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * @package Incompass\TimestampableBundle\EventListener
  * @author  Joe Mizzi <joe@casechek.com>
  */
-class TimestampableSubscriber implements EventSubscriber
+class TimestampableListener
 {
-    /**
-     * @return array
-     */
-    public function getSubscribedEvents()
-    {
-        return array(
-            'onFlush',
-        );
-    }
-
     /**
      * @param OnFlushEventArgs $args
      */
