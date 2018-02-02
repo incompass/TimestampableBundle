@@ -4,6 +4,7 @@ namespace Incompass\TimestampableBundle\Entity;
 
 use DateTime;
 use Doctrine\ORM\Mapping\Column;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * Class Timestampable
@@ -15,6 +16,7 @@ trait TimestampTrait
 {
     /**
      * @var DateTime
+     * * @Groups({"surgery_status_read", "vendor_request_status_read", "vendor_request_tray_scan_read"})
      * @Column(name="created_at", type="datetime")
      */
     private $createdAt;
