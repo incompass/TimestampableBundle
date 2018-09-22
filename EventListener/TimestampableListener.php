@@ -21,6 +21,11 @@ class TimestampableListener
         static::$allowOverride = $allowOverride;
     }
 
+    public static function getAllowOverride(): ?bool
+    {
+        return static::$allowOverride;
+    }
+
     /**
      * @param OnFlushEventArgs $args
      */
@@ -32,8 +37,8 @@ class TimestampableListener
             if ($insert instanceof TimestampInterface) {
                 /** @var TimestampTrait $update */
                 $now = new \DateTime(null, new \DateTimeZone('UTC'));
-                $insert->setCreatedAt($insert->getCreatedAt() && static::$allowOverride ? $insert->getCreatedAt() : $now);
-                $insert->setUpdatedAt($insert->getCreatedAt() && static::$allowOverride ? $insert->getCreatedAt() : $now);
+                $insert->setCreatedAt(($insert->getCreatedAt() && static::$allowOverride) ? $insert->getCreatedAt() : $now);
+                $insert->setUpdatedAt(($insert->getCreatedAt() && static::$allowOverride) ? $insert->getCreatedAt() : $now);
                 $uow->recomputeSingleEntityChangeSet(
                     $args->getEntityManager()->getClassMetadata(get_class($insert)),
                     $insert
