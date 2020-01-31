@@ -15,7 +15,7 @@ Installation
 
 ### Composer
 ```
-composer require incompass/timestampablebundle
+composer require incompass/timestampable-bundle
 ```
 
 Usage
